@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: drno
+    service: webserver
+  name: drno
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  - image: busybox
+    name: busybox
+    args:
+      - sleep
+      - "600"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
